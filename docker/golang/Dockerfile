@@ -31,6 +31,9 @@ RUN go get golang.org/x/tools/cmd/...
 RUN go get -u golang.org/x/lint/golint
 RUN go get github.com/oxequa/realize
 RUN go get github.com/gorilla/websocket
+RUN go get github.com/stretchr/gomniauth
+RUN go get github.com/stretchr/gomniauth/providers/google
+RUN go get github.com/stretchr/objx
 #CMD ["fresh"]
 # CMD "fresh"
 # Air インストール

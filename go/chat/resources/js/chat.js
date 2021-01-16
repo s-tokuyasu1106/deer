@@ -10,7 +10,7 @@ $(function(){
             alert("エラー：websocketに接続できませんでした");
             return false;
         }
-        socket.send(msgBox.val());
+        socket.send(JSON.stringify({"Message": msgBox.val()}));
         msgBox.val("");
         return false;
     });
@@ -22,7 +22,11 @@ $(function(){
             alert("接続が終了しました")
         }
         socket.onmessage = function(e) {
-            message.append($("<li>").text(e.data));
+            var msg = eval("("+e.data+")")
+            message.append($("<li>").append(
+                $("<strong>").text(msg.Name + ":"),
+                $("<span>").text(msg.Message)
+            ));
         }
     }
 });
