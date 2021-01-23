@@ -40,7 +40,7 @@ services:
     # フォルダ共有（ホストOS:コンテナ）
     volumes:
       - ./:/go/src/deer/
-    working_dir: /go/src/deer/go/chat
+    working_dir: /go/src/deer/go/src
     # docker-compose run 実行時に実行されるコマンド
     command: bash -c "realize start"
     #command: bash -c "reflex -r '(\.go$|go\.mod)' -s go run && go run"
